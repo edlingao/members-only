@@ -23,7 +23,9 @@ class PostsController < ApplicationController
   
     def show
         @post = Post.find_by(id: params[:id])
-        @user = User.find_by(id: @post.user_id)
+        if @post != nil
+            @user = User.find_by(id: @post.user_id)
+        end
     end
   
     private

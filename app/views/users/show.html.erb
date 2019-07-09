@@ -1,2 +1,7 @@
-<% provide(:title, "My Profile") %>
-<h1>Welcome <%= "#{@user.name}" %>!</h1>
+<%if not @user.nil?%>
+    <% provide(:title, "My Profile") %>
+    <h1>Welcome <%= "#{@user.name}" %>!</h1>
+<%else%>
+    <h1>ERROR 001</h1>
+    <p>The user you are trying to see doesn't exist!! <p>
+<%end%>
