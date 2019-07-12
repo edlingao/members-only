@@ -1,0 +1,20 @@
+<%if @user != nil%>
+
+	<% provide(:title, "#{@post.title}") %>
+
+	<h1><%= @post.title %><br></h1>
+	<p><%= simple_format(@post.body) %></p>
+	<br>
+	<br>
+	<p>
+	Post created by:<br>
+	<% if logged_in? %>
+		<%= @user.name %>
+	<% else %>
+		ANNONOYMOUS
+	<% end %>
+	</p>
+<%else%>
+    <h1>ERROR 002</h1>
+    <p>The post you are trying to see doesn't exist!! <p>
+<%end%>
